@@ -32,11 +32,11 @@ class Filme(Programa):
 
 
 class Serie(Programa):
-     def __init__(self, nome, ano, temporadas):
+    def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
-     def __str__(self):
+    def __str__(self):
         return f'{self._nome} - {self.ano} - {self.temporadas} temporadas - {self._likes} Likes'
 
 class Playlist:
@@ -47,12 +47,12 @@ class Playlist:
     def __getitem__(self, item):
         return self._programas[item]
 
+    def __len__(self):
+        return len(self._programas)
+
     @property
     def listagem(self):
         return self._programas
-    @property
-    def tamanho(self):
-        return len(self._programas)
     
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
